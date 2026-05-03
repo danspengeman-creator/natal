@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Maybelle Spengeman · Natal Chart</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --cream:#faf8f5;--off-white:#f2efe9;--stone:#e8e3db;
+  --warm-gray:#9a9189;--mid:#6b6358;--charcoal:#2c2825;--ink:#1a1714;
+  --dan:#4a6fa5;--lillian:#8b6b9e;--nolan:#4a8b7a;--maybelle:#b56b7a;
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --fb:'DM Sans',sans-serif;
+  --mw:1100px;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream);color:var(--charcoal);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:300;line-height:1.15;letter-spacing:.01em}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--stone)}
+.nav-inner{max-width:var(--mw);margin:0 auto;padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--fd);font-size:1.1rem;color:var(--ink);text-decoration:none;letter-spacing:.05em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-family:var(--fb);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+
+/* landing */
+.hero{padding:6rem 2rem 4rem;max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:1.2rem}
+.hero-title{font-size:clamp(2.8rem,5vw,4.2rem);font-weight:300;color:var(--ink);margin-bottom:1.5rem;line-height:1.1}
+.hero-title em{font-style:italic;color:var(--warm-gray)}
+.hero-body{font-size:1rem;color:var(--mid);max-width:400px;line-height:1.75;margin-bottom:2rem}
+
+.cards-grid{padding:2rem 2rem 6rem;max-width:var(--mw);margin:0 auto}
+.section-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--stone)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--stone);border:1px solid var(--stone)}
+.person-card{background:var(--cream);padding:2.5rem 2rem;text-decoration:none;color:inherit;display:block;position:relative;transition:background .2s;overflow:hidden}
+.person-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent,var(--charcoal));transform:scaleY(0);transform-origin:bottom;transition:transform .3s ease}
+.person-card:hover{background:var(--off-white)}
+.person-card:hover::before{transform:scaleY(1)}
+.card-name{font-family:var(--fd);font-size:1.6rem;font-weight:300;color:var(--ink);margin-bottom:.3rem}
+.card-dob{font-size:.78rem;color:var(--warm-gray);letter-spacing:.04em;margin-bottom:1.5rem}
+.card-big3{display:flex;flex-direction:column;gap:.4rem}
+.card-big3-item{display:flex;align-items:baseline;gap:.5rem;font-size:.82rem}
+.card-big3-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--warm-gray);min-width:52px}
+.card-big3-value{color:var(--mid)}
+.card-arrow{position:absolute;bottom:2rem;right:2rem;font-size:1.2rem;color:var(--stone);transition:color .2s,transform .2s}
+.person-card:hover .card-arrow{color:var(--accent,var(--charcoal));transform:translate(3px,-3px)}
+
+/* person pages */
+.person-hero{padding:5rem 2rem 4rem;max-width:var(--mw);margin:0 auto;border-bottom:1px solid var(--stone)}
+.back-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--warm-gray);text-decoration:none;margin-bottom:3rem;transition:color .2s}
+.back-link:hover{color:var(--ink)}
+.person-hero-name{font-size:clamp(3rem,6vw,5rem);font-weight:300;color:var(--ink);margin-bottom:.5rem}
+.person-hero-meta{font-size:.85rem;color:var(--warm-gray);letter-spacing:.04em;margin-bottom:2.5rem}
+.accent-bar{width:48px;height:2px;background:var(--accent,var(--charcoal));margin-bottom:2rem}
+.person-hero-tagline{font-family:var(--fd);font-size:1.35rem;font-style:italic;color:var(--mid);max-width:560px;line-height:1.5}
+
+.big3-strip{background:var(--ink);padding:3rem 2rem}
+.big3-inner{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.big3-cell{background:var(--ink);padding:2rem 2.5rem;text-align:center}
+.big3-glyph{font-size:2rem;margin-bottom:.75rem;display:block;opacity:.6}
+.big3-placement{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem}
+.big3-sign{font-family:var(--fd);font-size:1.8rem;font-weight:300;color:#fff;margin-bottom:.2rem}
+.big3-degree{font-size:.78rem;color:rgba(255,255,255,.35)}
+
+.tables-section{padding:4rem 2rem;max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.table-block h3{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--stone)}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+thead th{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--warm-gray);font-weight:400;padding:.5rem .75rem;text-align:left;border-bottom:1px solid var(--stone)}
+tbody td{padding:.65rem .75rem;color:var(--mid);border-bottom:1px solid rgba(232,227,219,.5);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody td:first-child{color:var(--charcoal);font-weight:500}
+
+.profile-section{padding:4rem 2rem 6rem;max-width:var(--mw);margin:0 auto}
+.profile-section>.section-label{margin-bottom:3rem}
+.profile-entries{display:grid;grid-template-columns:1fr 1fr;gap:3rem 5rem}
+.profile-entry-heading{font-family:var(--fd);font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:.75rem;line-height:1.3}
+.profile-entry-heading span{display:block;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--warm-gray);font-family:var(--fb);font-weight:400;margin-bottom:.4rem}
+.profile-entry p{font-size:.9rem;color:var(--mid);line-height:1.8}
+
+footer{border-top:1px solid var(--stone);padding:2rem;text-align:center}
+footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
+
+.fade-up{opacity:0;transform:translateY(20px);animation:fadeUp .7s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.fade-up:nth-child(1){animation-delay:.05s}
+.fade-up:nth-child(2){animation-delay:.15s}
+.fade-up:nth-child(3){animation-delay:.25s}
+
+.scroll-reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.scroll-reveal.visible{opacity:1;transform:translateY(0)}
+
+.zodiac-ring{width:300px;height:300px;border-radius:50%;border:1px solid var(--stone);position:relative;display:flex;align-items:center;justify-content:center}
+.zodiac-ring::before{content:'';position:absolute;width:220px;height:220px;border-radius:50%;border:1px solid var(--stone)}
+.zodiac-ring::after{content:'';position:absolute;width:110px;height:110px;border-radius:50%;border:1px solid var(--stone)}
+.zodiac-center{font-family:var(--fd);font-size:.95rem;font-style:italic;color:var(--warm-gray);text-align:center;z-index:1;line-height:1.4}
+.zodiac-glyph{position:absolute;font-size:.9rem;color:var(--stone)}
+.g1{top:4px;left:50%;transform:translateX(-50%)}
+.g2{top:20px;right:58px}
+.g3{top:72px;right:10px}
+.g4{top:50%;right:4px;transform:translateY(-50%)}
+.g5{bottom:72px;right:10px}
+.g6{bottom:20px;right:58px}
+.g7{bottom:4px;left:50%;transform:translateX(-50%)}
+.g8{bottom:20px;left:58px}
+.g9{bottom:72px;left:10px}
+.g10{top:50%;left:4px;transform:translateY(-50%)}
+.g11{top:72px;left:10px}
+.g12{top:20px;left:58px}
+
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;gap:2rem;padding:4rem 1.5rem 3rem}
+  .big3-inner{grid-template-columns:1fr}
+  .tables-section{grid-template-columns:1fr;gap:2.5rem}
+  .profile-entries{grid-template-columns:1fr;gap:2rem}
+  .nav-links{display:none}
+  .hero-visual{display:none}
+}
+
+  :root{--accent:var(--maybelle);}
+  
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">✦ Spengeman</a>
+    <ul class="nav-links">
+      <li><a href="dan.html">Dan</a></li>
+      <li><a href="lillian.html">Lillian</a></li>
+      <li><a href="nolan.html">Nolan</a></li>
+      <li><a href="maybelle.html">Maybelle</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="person-hero">
+  <a class="back-link" href="index.html">← All Charts</a>
+  <p class="hero-eyebrow">Natal Chart</p>
+  <h1 class="person-hero-name fade-up">Maybelle<br/><span style="color:var(--warm-gray);font-size:.6em;font-weight:300;font-style:italic;">Spengeman</span></h1>
+  <p class="person-hero-meta">May 2, 2022 · 11:59 PM EDT · Oceanport, NJ</p>
+  <div class="accent-bar"></div>
+  <p class="person-hero-tagline fade-up">"The creative original — seeing the world in ways others do not, carrying within her a genuine artistic sensibility"</p>
+</div>
+
+<div class="big3-strip">
+  <div class="big3-inner">
+    <div class="big3-cell"><span class="big3-glyph">☉</span><p class="big3-placement">Sun</p><p class="big3-sign">Taurus</p><p class="big3-degree">13°</p></div>
+    <div class="big3-cell"><span class="big3-glyph">☽</span><p class="big3-placement">Moon</p><p class="big3-sign">Gemini</p><p class="big3-degree">9°</p></div>
+    <div class="big3-cell"><span class="big3-glyph">↑</span><p class="big3-placement">Rising</p><p class="big3-sign">Capricorn</p><p class="big3-degree">5°</p></div>
+  </div>
+</div>
+
+<div class="tables-section scroll-reveal">
+  <div class="table-block">
+    <h3>Planetary Positions</h3>
+    <table><thead><tr><th>Planet</th><th>Sign</th><th>Degree</th><th>House</th></tr></thead>
+    <tbody><tr><td>☉ Sun</td><td>Taurus</td><td>13°</td><td>4th / 5th</td></tr>
+<tr><td>☽ Moon</td><td>Gemini</td><td>9°</td><td>5th / 6th</td></tr>
+<tr><td>☿ Mercury</td><td>Gemini</td><td>3°</td><td>5th</td></tr>
+<tr><td>♀ Venus</td><td>Aries</td><td>1°</td><td>3rd</td></tr>
+<tr><td>♂ Mars</td><td>Pisces</td><td>14°</td><td>2nd / 3rd</td></tr>
+<tr><td>♃ Jupiter</td><td>Pisces</td><td>28°</td><td>2nd / 3rd</td></tr>
+<tr><td>♄ Saturn</td><td>Aquarius</td><td>24°</td><td>1st / 2nd</td></tr>
+<tr><td>♅ Uranus</td><td>Taurus</td><td>15°</td><td>4th / 5th</td></tr>
+<tr><td>♆ Neptune</td><td>Pisces</td><td>25°</td><td>2nd / 3rd</td></tr>
+<tr><td>♇ Pluto</td><td>Capricorn</td><td>29°</td><td>1st</td></tr></tbody></table>
+  </div>
+  <div class="table-block">
+    <h3>Key Aspects</h3>
+    <table><thead><tr><th>Aspect</th><th>Planets</th><th>Notes</th></tr></thead>
+    <tbody><tr><td>☌ Conjunction</td><td>Sun + Uranus</td><td>Taurus — original, inventive nature</td></tr>
+<tr><td>☌ Conjunction</td><td>Moon + Mercury</td><td>Gemini — emotionally verbal and quick</td></tr>
+<tr><td>☌ Conjunction</td><td>Mars + Jupiter</td><td>Pisces — generous creative drive</td></tr>
+<tr><td>☌ Conjunction</td><td>Neptune + Mars</td><td>Pisces — deep artistic sensitivity</td></tr></tbody></table>
+  </div>
+</div>
+
+<div class="profile-section scroll-reveal">
+  <p class="section-label">Personality Profile</p>
+  <div class="profile-entries">
+        <div class="profile-entry">
+          <h3 class="profile-entry-heading"><span>Sun in Taurus · 4th/5th House · Conjunct Uranus</span>The Core</h3>
+          <p>Maybelle's Taurus Sun wants comfort, beauty and steadiness — but Uranus sitting right beside it disrupts that with flashes of brilliance, originality and restlessness. She will not be a predictable Taurus. She is likely to surprise people constantly — with what she says, creates and how she sees things differently from everyone around her.</p>
+        </div>
+        <div class="profile-entry">
+          <h3 class="profile-entry-heading"><span>Moon in Gemini · 5th/6th House · Conjunct Mercury</span>The Inner Life</h3>
+          <p>Maybelle's emotional world and her mental world are essentially fused. Moon conjunct Mercury in Gemini means she processes feelings through words and communication — she will likely need to talk, write or express her way through big emotions. She is emotionally quick and may be very perceptive about other people's states.</p>
+        </div>
+        <div class="profile-entry">
+          <h3 class="profile-entry-heading"><span>Capricorn Rising · Pluto Conjunct ASC</span>The Outer Persona</h3>
+          <p>Like her brother Nolan, Maybelle has Capricorn rising — she will appear more composed and grounded to the world than she feels inside. Pluto at 29° Capricorn right on her Ascendant gives her a penetrating, intense quality that people will notice without being able to fully explain.</p>
+        </div>
+        <div class="profile-entry">
+          <h3 class="profile-entry-heading"><span>Mars, Jupiter &amp; Neptune in Pisces</span>Artistic &amp; Creative Life</h3>
+          <p>This is a signature of deep creative and imaginative power. Mars, Jupiter and Neptune all clustered in Pisces suggest a child who lives richly in her imagination — and who has the drive to express it. She may be drawn to music, visual art, storytelling or dance. This is not casual creativity; there is real depth here.</p>
+        </div>
+        <div class="profile-entry">
+          <h3 class="profile-entry-heading"><span>Moon-Mercury in Gemini</span>Communication &amp; Mind</h3>
+          <p>She will likely be an early and enthusiastic talker. Ideas come quickly, interests shift and multiply. The Taurus Sun provides enough grounding that she follows through more than a pure Gemini might, but her mind needs stimulation and variety. She may become a natural storyteller.</p>
+        </div>
+        <div class="profile-entry">
+          <h3 class="profile-entry-heading"><span>Uranus-Sun · Gemini Moon</span>The Shadow</h3>
+          <p>The combination of Uranus-Sun and the Gemini Moon can produce sensory and mental overstimulation. Maybelle may get overwhelmed when there is too much happening or too little creative outlet. Consistent routines alongside genuine freedom to create is the key to her flourishing.</p>
+        </div></div>
+</div>
+
+<footer><p>Maybelle Spengeman · May 2, 2022 · 11:59 PM EDT · Oceanport, NJ</p></footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+  },{threshold:.1});
+  document.querySelectorAll('.scroll-reveal').forEach(el=>obs.observe(el));
+});
+</script>
+</body>
+</html>
