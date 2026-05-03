@@ -7,9 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"/>
   <link rel="apple-touch-icon" sizes="192x192" href="favicon-192.png"/>
-  <title>Spengeman Natal Charts</title>
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+  <title>Dan &amp; Maybelle · Synastry</title>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -128,102 +127,110 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 }
 
   :root{--accent:var(--dan);}
-  
+  :root{--accent:#4a6fa5;}
+  .syn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--stone);border:1px solid var(--stone);margin-bottom:3rem}
+  .syn-card{background:var(--cream);padding:2rem;}
+  .syn-card h4{font-family:var(--fd);font-size:1.4rem;font-weight:300;color:var(--ink);margin-bottom:.3rem}
+  .syn-card .meta{font-size:.75rem;color:var(--warm-gray);margin-bottom:1rem}
+  .syn-card .tag{font-size:.82rem;color:var(--mid);font-style:italic;font-family:var(--fd)}
+  .score-bar{display:flex;gap:.5rem;align-items:center;margin:1.5rem 0}
+  .score-pill{padding:.3rem .9rem;border-radius:20px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+  @media(max-width:768px){.syn-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">✦ Spengeman</a>
-    <ul class="nav-links">
-      <li><a href="synastry.html">Synastry</a></li>
-      <li><a href="dan.html">Dan</a></li>
-      <li><a href="michelle.html">Michelle</a></li>
-      <li><a href="lillian.html">Lillian</a></li>
-      <li><a href="nolan.html">Nolan</a></li>
-      <li><a href="maybelle.html">Maybelle</a></li>
+    <ul class="nav-links" style="gap:1.2rem">
+      <li><a href="dan-michelle-synastry.html" style="">Dan &amp; Michelle</a></li>
+      <li><a href="dan-lillian-synastry.html" style="">Dan &amp; Lillian</a></li>
+      <li><a href="dan-nolan-synastry.html" style="">Dan &amp; Nolan</a></li>
+      <li><a href="dan-maybelle-synastry.html" style="color:var(--ink);">Dan &amp; Maybelle</a></li>
+      <li><a href="michelle-lillian-synastry.html" style="">Michelle &amp; Lillian</a></li>
+      <li><a href="michelle-nolan-synastry.html" style="">Michelle &amp; Nolan</a></li>
+      <li><a href="michelle-maybelle-synastry.html" style="">Michelle &amp; Maybelle</a></li>
+      
     </ul>
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-text fade-up">
-    <p class="hero-eyebrow">The Spengeman Family</p>
-    <h1 class="hero-title">Natal Chart<br/><em>Readings</em></h1>
-    <p class="hero-body">A personal astrological record for Dan, Lillian, Nolan and Maybelle — each chart calculated to the minute from their birth time and location.</p>
-    <p style="font-size:.78rem;color:var(--warm-gray);letter-spacing:.06em;text-transform:uppercase;">Oceanport &amp; Long Branch, New Jersey</p>
-  </div>
-  <div class="hero-visual fade-up" style="display:flex;align-items:center;justify-content:center;">
-    <div class="zodiac-ring">
-      <span class="zodiac-glyph g1">♈</span><span class="zodiac-glyph g2">♉</span>
-      <span class="zodiac-glyph g3">♊</span><span class="zodiac-glyph g4">♋</span>
-      <span class="zodiac-glyph g5">♌</span><span class="zodiac-glyph g6">♍</span>
-      <span class="zodiac-glyph g7">♎</span><span class="zodiac-glyph g8">♏</span>
-      <span class="zodiac-glyph g9">♐</span><span class="zodiac-glyph g10">♑</span>
-      <span class="zodiac-glyph g11">♒</span><span class="zodiac-glyph g12">♓</span>
-      <div class="zodiac-center">as above<br/>so below</div>
+<div class="person-hero">
+  <a class="back-link" href="synastry.html">← All Synastry</a>
+  <p class="hero-eyebrow">Synastry Reading</p>
+  <h1 class="person-hero-name fade-up" style="font-size:clamp(2.2rem,5vw,3.8rem)">Dan <span style="color:var(--stone)">&amp;</span> Maybelle</h1>
+  <div class="accent-bar"></div>
+  <p class="person-hero-tagline fade-up">A warm and creatively alive connection — Maybelle's Sun in Taurus harmonizes beautifully with Dan's emotional world, and both share an appreciation for beauty, steadiness and depth beneath the surface.</p>
+</div>
+
+<div style="background:var(--ink);padding:2.5rem 2rem;">
+  <div style="max-width:var(--mw);margin:0 auto;">
+    <div class="syn-grid">
+      <div class="syn-card">
+        <h4>Dan</h4>
+        <p class="meta">☉ Leo · ☽ Capricorn · ↑ Sagittarius</p>
+        <p class="tag">"quietly powerful builder"</p>
+      </div>
+      <div class="syn-card">
+        <h4>Maybelle</h4>
+        <p class="meta">☉ Taurus · ☽ Gemini · ↑ Capricorn</p>
+        <p class="tag">"creative original"</p>
+      </div>
+    </div>
+    <div class="score-bar">
+      <span class="score-pill" style="background:#4a8b7a;color:#fff">4 Harmonious</span>
+      <span class="score-pill" style="background:#b56b7a;color:#fff">1 Challenging</span>
+      <span style="font-size:.78rem;color:rgba(255,255,255,.4);margin-left:.5rem">of 5 key aspects</span>
     </div>
   </div>
-</section>
+</div>
 
-<section class="cards-grid">
-  <p class="section-label">Choose a Chart</p>
-  <div class="grid">
-    <a class="person-card" href="dan.html" style="--accent:var(--dan)">
-      <p class="card-name">Dan</p>
-      <p class="card-dob">August 4, 1982 · 4:17 PM · Long Branch, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Leo 12°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Capricorn 20°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Sagittarius 28°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
-    <a class="person-card" href="michelle.html" style="--accent:#b07850">
-      <p class="card-name">Michelle</p>
-      <p class="card-dob">May 11, 1991 · 10:00 PM · Neptune City, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Taurus 21°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Aries 22°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Sagittarius 16°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
-    <a class="person-card" href="lillian.html" style="--accent:var(--lillian)">
-      <p class="card-name">Lillian</p>
-      <p class="card-dob">June 11, 2017 · 1:03 AM · Oceanport, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Gemini 20°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Capricorn 9°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Pisces 15°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
-    <a class="person-card" href="nolan.html" style="--accent:var(--nolan)">
-      <p class="card-name">Nolan</p>
-      <p class="card-dob">December 24, 2019 · 7:35 AM · Oceanport, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Capricorn 2°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Sagittarius 11°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Capricorn 5°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
-    <a class="person-card" href="maybelle.html" style="--accent:var(--maybelle)">
-      <p class="card-name">Maybelle</p>
-      <p class="card-dob">May 2, 2022 · 11:59 PM · Oceanport, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Taurus 13°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Gemini 9°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Capricorn 5°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
-  </div>
-</section>
-<footer><p>The Spengeman Family · Natal Chart Archive · Long Branch &amp; Oceanport, NJ</p></footer>
+<div style="padding:4rem 2rem 6rem;max-width:var(--mw);margin:0 auto;">
+  <p class="section-label">Key Aspects</p>
+  
+        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #4a8b7a;padding-left:1.2rem;margin-bottom:2rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
+            <span style="font-size:1.1rem;color:#4a8b7a">△</span>
+            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Maybelle's Sun Trine Dan's Moon</h3>
+            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#4a8b7a;margin-left:auto;white-space:nowrap">Flow</span>
+          </div>
+          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Maybelle's Taurus Sun lands in perfect trine to Dan's Capricorn Moon — she has a naturally calming effect on his emotional world. He feels at ease around her in a way that is almost automatic.</p>
+        </div>
+        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #4a6fa5;padding-left:1.2rem;margin-bottom:2rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
+            <span style="font-size:1.1rem;color:#4a6fa5">⚹</span>
+            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Dan's Sun Sextile Maybelle's Moon</h3>
+            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#4a6fa5;margin-left:auto;white-space:nowrap">Harmony</span>
+          </div>
+          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Dan's Leo Sun gently supports Maybelle's Gemini Moon — he gives her expressive inner world room to breathe and encourages her curiosity without overwhelming it.</p>
+        </div>
+        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #4a8b7a;padding-left:1.2rem;margin-bottom:2rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
+            <span style="font-size:1.1rem;color:#4a8b7a">△</span>
+            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Dan's Venus Trine Maybelle's Mars</h3>
+            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#4a8b7a;margin-left:auto;white-space:nowrap">Flow</span>
+          </div>
+          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Dan's Cancer Venus flows easily with Maybelle's Pisces Mars — her creative drive and his relational warmth complement each other naturally. He supports what she makes; she instinctively creates things he finds beautiful.</p>
+        </div>
+        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #4a8b7a;padding-left:1.2rem;margin-bottom:2rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
+            <span style="font-size:1.1rem;color:#4a8b7a">△</span>
+            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Maybelle's Moon Trine Dan's Mars</h3>
+            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#4a8b7a;margin-left:auto;white-space:nowrap">Flow</span>
+          </div>
+          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Maybelle's quick Gemini emotional processing actually harmonizes with Dan's strategic Libra Mars — she can keep up with his drive and adds a lightness to it that he benefits from.</p>
+        </div>
+        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #b56b7a;padding-left:1.2rem;margin-bottom:2rem;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
+            <span style="font-size:1.1rem;color:#b56b7a">□</span>
+            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Dan's Sun Square Maybelle's Sun</h3>
+            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#b56b7a;margin-left:auto;white-space:nowrap">Tension</span>
+          </div>
+          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Leo and Taurus are both fixed signs — stubborn in their own way, committed to their own perspective. This square will produce some wonderful standoffs between a father who wants to be expressive and a daughter who wants to do things her way.</p>
+        </div>
+</div>
 
+<footer><p>Dan &amp; Maybelle · Synastry · Spengeman Family Charts</p></footer>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
   const obs=new IntersectionObserver(entries=>{

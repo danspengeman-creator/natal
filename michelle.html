@@ -7,13 +7,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"/>
   <link rel="apple-touch-icon" sizes="192x192" href="favicon-192.png"/>
-  <title>Spengeman Natal Charts</title>
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+  <title>Michelle Spengeman · Natal Chart</title>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-:root{
+:root{--accent:#b07850;--michelle:#b07850;
   --cream:#faf8f5;--off-white:#f2efe9;--stone:#e8e3db;
   --warm-gray:#9a9189;--mid:#6b6358;--charcoal:#2c2825;--ink:#1a1714;
   --dan:#4a6fa5;--lillian:#8b6b9e;--nolan:#4a8b7a;--maybelle:#b56b7a;
@@ -127,12 +126,10 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   .hero-visual{display:none}
 }
 
-  :root{--accent:var(--dan);}
-  
+  :root{--accent:#b07850;--michelle:#b07850;--accent:var(--dan);}
   </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">✦ Spengeman</a>
@@ -147,82 +144,78 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-text fade-up">
-    <p class="hero-eyebrow">The Spengeman Family</p>
-    <h1 class="hero-title">Natal Chart<br/><em>Readings</em></h1>
-    <p class="hero-body">A personal astrological record for Dan, Lillian, Nolan and Maybelle — each chart calculated to the minute from their birth time and location.</p>
-    <p style="font-size:.78rem;color:var(--warm-gray);letter-spacing:.06em;text-transform:uppercase;">Oceanport &amp; Long Branch, New Jersey</p>
-  </div>
-  <div class="hero-visual fade-up" style="display:flex;align-items:center;justify-content:center;">
-    <div class="zodiac-ring">
-      <span class="zodiac-glyph g1">♈</span><span class="zodiac-glyph g2">♉</span>
-      <span class="zodiac-glyph g3">♊</span><span class="zodiac-glyph g4">♋</span>
-      <span class="zodiac-glyph g5">♌</span><span class="zodiac-glyph g6">♍</span>
-      <span class="zodiac-glyph g7">♎</span><span class="zodiac-glyph g8">♏</span>
-      <span class="zodiac-glyph g9">♐</span><span class="zodiac-glyph g10">♑</span>
-      <span class="zodiac-glyph g11">♒</span><span class="zodiac-glyph g12">♓</span>
-      <div class="zodiac-center">as above<br/>so below</div>
-    </div>
-  </div>
-</section>
+<div class="person-hero">
+  <a class="back-link" href="index.html">← All Charts</a>
+  <p class="hero-eyebrow">Natal Chart</p>
+  <h1 class="person-hero-name fade-up">Michelle<br/><span style="color:var(--warm-gray);font-size:.6em;font-weight:300;font-style:italic;">Spengeman</span></h1>
+  <p class="person-hero-meta">May 11, 1991 · 10:00 PM EDT · Neptune City, NJ (40.207°N / 74.029°W)</p>
+  <div class="accent-bar"></div>
+  <p class="person-hero-tagline fade-up">"A warm, grounded nurturer with a fierce and fiery inner life — someone who loves deeply, creates beautifully, and transforms quietly."</p>
+</div>
 
-<section class="cards-grid">
-  <p class="section-label">Choose a Chart</p>
-  <div class="grid">
-    <a class="person-card" href="dan.html" style="--accent:var(--dan)">
-      <p class="card-name">Dan</p>
-      <p class="card-dob">August 4, 1982 · 4:17 PM · Long Branch, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Leo 12°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Capricorn 20°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Sagittarius 28°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
-    <a class="person-card" href="michelle.html" style="--accent:#b07850">
-      <p class="card-name">Michelle</p>
-      <p class="card-dob">May 11, 1991 · 10:00 PM · Neptune City, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Taurus 21°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Aries 22°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Sagittarius 16°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
-    <a class="person-card" href="lillian.html" style="--accent:var(--lillian)">
-      <p class="card-name">Lillian</p>
-      <p class="card-dob">June 11, 2017 · 1:03 AM · Oceanport, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Gemini 20°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Capricorn 9°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Pisces 15°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
-    <a class="person-card" href="nolan.html" style="--accent:var(--nolan)">
-      <p class="card-name">Nolan</p>
-      <p class="card-dob">December 24, 2019 · 7:35 AM · Oceanport, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Capricorn 2°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Sagittarius 11°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Capricorn 5°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
-    <a class="person-card" href="maybelle.html" style="--accent:var(--maybelle)">
-      <p class="card-name">Maybelle</p>
-      <p class="card-dob">May 2, 2022 · 11:59 PM · Oceanport, NJ</p>
-      <div class="card-big3">
-        <div class="card-big3-item"><span class="card-big3-label">Sun</span><span class="card-big3-value">Taurus 13°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Moon</span><span class="card-big3-value">Gemini 9°</span></div>
-        <div class="card-big3-item"><span class="card-big3-label">Rising</span><span class="card-big3-value">Capricorn 5°</span></div>
-      </div>
-      <span class="card-arrow">↗</span>
-    </a>
+<div class="big3-strip">
+  <div class="big3-inner">
+    <div class="big3-cell"><span class="big3-glyph">☉</span><p class="big3-placement">Sun</p><p class="big3-sign">Taurus</p><p class="big3-degree">21°</p></div>
+    <div class="big3-cell"><span class="big3-glyph">☽</span><p class="big3-placement">Moon</p><p class="big3-sign">Aries</p><p class="big3-degree">22°</p></div>
+    <div class="big3-cell"><span class="big3-glyph">↑</span><p class="big3-placement">Rising</p><p class="big3-sign">Sagittarius</p><p class="big3-degree">16°</p></div>
   </div>
-</section>
-<footer><p>The Spengeman Family · Natal Chart Archive · Long Branch &amp; Oceanport, NJ</p></footer>
+</div>
+
+<div class="tables-section scroll-reveal">
+  <div class="table-block">
+    <h3>Planetary Positions</h3>
+    <table><thead><tr><th>Planet</th><th>Sign</th><th>Degree</th><th>House</th></tr></thead>
+    <tbody><tr><td>☉ Sun</td><td>Taurus</td><td>21°</td><td>6th</td></tr>
+<tr><td>☽ Moon</td><td>Aries</td><td>22°</td><td>5th</td></tr>
+<tr><td>☿ Mercury</td><td>Aries</td><td>25°</td><td>5th</td></tr>
+<tr><td>♀ Venus</td><td>Cancer</td><td>3°</td><td>7th</td></tr>
+<tr><td>♂ Mars</td><td>Cancer</td><td>22°</td><td>8th</td></tr>
+<tr><td>♃ Jupiter</td><td>Leo</td><td>6°</td><td>8th / 9th</td></tr>
+<tr><td>♄ Saturn</td><td>Aquarius</td><td>7°</td><td>2nd</td></tr>
+<tr><td>♅ Uranus</td><td>Capricorn</td><td>14°</td><td>1st / 2nd</td></tr>
+<tr><td>♆ Neptune</td><td>Capricorn</td><td>17°</td><td>2nd</td></tr>
+<tr><td>♇ Pluto</td><td>Scorpio</td><td>19°</td><td>12th</td></tr></tbody></table>
+  </div>
+  <div class="table-block">
+    <h3>Key Aspects</h3>
+    <table><thead><tr><th>Aspect</th><th>Planets</th><th>Notes</th></tr></thead>
+    <tbody><tr><td>☌ Conjunction</td><td>Moon + Mercury</td><td>Aries — emotionally direct, verbally expressive</td></tr>
+<tr><td>☍ Opposition</td><td>Sun + Pluto</td><td>Taurus / Scorpio — depth, intensity, transformation</td></tr>
+<tr><td>☌ Conjunction</td><td>Venus + Mars</td><td>Cancer — passionate, nurturing in love</td></tr>
+<tr><td>□ Square</td><td>Jupiter + Pluto</td><td>Leo / Scorpio — expansive drive meets deep power</td></tr></tbody></table>
+  </div>
+</div>
+
+<div class="profile-section scroll-reveal">
+  <p class="section-label">Personality Profile</p>
+  <div class="profile-entries">
+    <div class="profile-entry">
+      <h3 class="profile-entry-heading"><span>Sun in Taurus · 6th House</span>The Core</h3>
+      <p>Michelle's identity is grounded in beauty, steadiness and devoted care. The 6th house places her Sun in the realm of daily life, health and service — she finds deep meaning in nurturing others and in the rhythms of everyday life. She is not a Taurus who sits still; she works, creates and tends with quiet devotion. Reliability and integrity are core to how she sees herself.</p>
+    </div>
+    <div class="profile-entry">
+      <h3 class="profile-entry-heading"><span>Moon in Aries · 5th House · Conjunct Mercury</span>The Inner Life</h3>
+      <p>Emotionally Michelle is quick, direct and passionate. Her feelings arrive fast and she processes them through expression rather than silence — Moon conjunct Mercury in Aries means her emotions and words are tightly linked. She is likely someone who says what she feels, often immediately. The 5th house gives this an expressive, creative and playful quality — her inner life is lit up by creativity, children and joy.</p>
+    </div>
+    <div class="profile-entry">
+      <h3 class="profile-entry-heading"><span>Sagittarius Rising</span>The Outer Persona</h3>
+      <p>To the world Michelle projects warmth, openness and an infectious enthusiasm for life. She comes across as someone who is genuinely interested in people and ideas, and who brings an expansive, philosophical energy to every room she enters. There is a naturalness and ease to her presence — she rarely seems guarded. This Rising also gives her a love of learning, travel and meaning-making that likely runs through everything she does.</p>
+    </div>
+    <div class="profile-entry">
+      <h3 class="profile-entry-heading"><span>Venus + Mars in Cancer · 7th / 8th House</span>Love &amp; Partnership</h3>
+      <p>In relationships Michelle is deeply nurturing, emotionally invested and fiercely loyal. Venus and Mars both in Cancer creates someone for whom love and home are inseparable — she loves by feeding, sheltering, protecting and creating safety. She is passionate and tender in equal measure. The 7th / 8th house placement gives her partnerships a quality of real depth and transformation over time.</p>
+    </div>
+    <div class="profile-entry">
+      <h3 class="profile-entry-heading"><span>Sun opposite Pluto · Taurus / Scorpio</span>The Sun-Pluto Opposition</h3>
+      <p>This is one of the most significant aspects in Michelle's chart. Sun opposite Pluto creates someone who has a complex relationship with power, control and personal authority. She is likely drawn to transformation — in herself and in the people close to her. She may have encountered circumstances that required her to rebuild herself from the inside out, and emerged from those experiences with unusual psychological depth and resilience.</p>
+    </div>
+    <div class="profile-entry">
+      <h3 class="profile-entry-heading"><span>Aries Moon · Intensity and Impatience</span>The Shadow</h3>
+      <p>The Aries Moon's directness can tip into impatience or emotional volatility when she is overstretched or unheard. The Sun-Pluto opposition can create an undertow of all-or-nothing thinking in relationships. The gift is that she is also profoundly capable of transformation — she does not stay stuck. Her greatest growth edge is learning to slow down and let things unfold without forcing resolution.</p>
+    </div></div>
+</div>
+
+<footer><p>Michelle Spengeman · May 11, 1991 · 10:00 PM EDT · Neptune City, NJ</p></footer>
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
