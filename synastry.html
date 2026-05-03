@@ -117,12 +117,64 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 .g11{top:72px;left:10px}
 .g12{top:20px;left:58px}
 
+
+/* ── Mobile Nav ───────────────────────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--charcoal);
+  transition: all 0.25s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background: rgba(250,248,245,0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--stone);
+  padding: 1rem 2rem 1.5rem;
+  z-index: 99;
+  flex-direction: column;
+  gap: 0;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--fb);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--stone);
+  transition: color 0.2s;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--ink); }
+
 @media(max-width:768px){
   .hero{grid-template-columns:1fr;gap:2rem;padding:4rem 1.5rem 3rem}
   .big3-inner{grid-template-columns:1fr}
   .tables-section{grid-template-columns:1fr;gap:2.5rem}
   .profile-entries{grid-template-columns:1fr;gap:2rem}
   .nav-links{display:none}
+  .hamburger{display:flex}
   .hero-visual{display:none}
 }
 
@@ -138,8 +190,14 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
       <li><a href="index.html">Charts</a></li>
       <li><a href="synastry.html" style="color:var(--ink)">Synastry</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Charts</a> <a href="synastry.html" style="color:var(--ink)">Synastry</a>
+</div>
 
 <div class="person-hero">
   <p class="hero-eyebrow">Astrological Connections</p>
@@ -225,6 +283,23 @@ document.addEventListener('DOMContentLoaded',()=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
   },{threshold:.1});
   document.querySelectorAll('.scroll-reveal').forEach(el=>obs.observe(el));
+  
+const btn = document.getElementById('hamburger');
+const menu = document.getElementById('mobile-menu');
+if (btn && menu) {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  // close on link tap
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+    });
+  });
+}
+
 });
 </script>
 </body>
