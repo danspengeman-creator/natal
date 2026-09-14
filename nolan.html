@@ -170,13 +170,35 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 .mobile-menu a:hover { color: var(--ink); }
 
 @media(max-width:768px){
-  .hero{grid-template-columns:1fr;gap:2rem;padding:4rem 1.5rem 3rem}
+  .container{padding:0 1.25rem}
+  .hero{grid-template-columns:1fr;gap:2rem;padding:3rem 1.25rem 2.5rem}
+  .hero-title{font-size:clamp(2.2rem,9vw,2.8rem)}
+  .cards-grid{padding:1.5rem 1.25rem 4rem}
   .big3-inner{grid-template-columns:1fr}
-  .tables-section{grid-template-columns:1fr;gap:2.5rem}
-  .profile-entries{grid-template-columns:1fr;gap:2rem}
+  .big3-cell{padding:1.5rem 1.5rem}
+  .tables-section{grid-template-columns:1fr;gap:2rem;padding:2.5rem 1.25rem}
+  .table-block{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .table-block table{min-width:100%}
+  .profile-section{padding:2.75rem 1.25rem 3.25rem}
+  .profile-entries{grid-template-columns:1fr;gap:1.75rem}
+  .profile-entry-heading{font-size:1.1rem}
+  .person-hero{padding:3.5rem 1.25rem 2.75rem}
+  .person-hero-name{font-size:clamp(2.4rem,11vw,3.2rem)}
+  .person-hero-tagline{font-size:1.1rem}
   .nav-links{display:none}
   .hamburger{display:flex}
   .hero-visual{display:none}
+  .nav-inner{padding:0 1.25rem}
+  footer{padding:1.5rem 1.25rem}
+  table{font-size:.78rem}
+  thead th{padding:.4rem .5rem;font-size:.6rem}
+  tbody td{padding:.5rem .5rem}
+}
+@media(max-width:480px){
+  .hero-title{font-size:2rem}
+  .person-hero-name{font-size:2.1rem}
+  .card-name{font-size:1.35rem}
+  .big3-sign{font-size:1.4rem}
 }
 
   :root{--accent:var(--nolan);}
@@ -275,6 +297,54 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   .side-nav { display: none; }
 }
 
+  
+/* ── Mobile Jump Nav (mobile/tablet only, hidden on desktop) ────────────────── */
+.mobile-jump-nav {
+  display: none;
+  position: sticky;
+  top: 56px;
+  z-index: 59;
+  background: rgba(250,248,245,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--stone);
+  padding: .65rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.mobile-jump-nav::-webkit-scrollbar { display: none; }
+.mobile-jump-nav-track {
+  display: flex;
+  gap: .5rem;
+  padding: 0 1rem;
+  width: max-content;
+}
+.mobile-jump-nav a {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: .4rem .85rem;
+  border-radius: 20px;
+  background: var(--off-white);
+  border: 1px solid var(--stone);
+  color: var(--ink);
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .03em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.mobile-jump-nav a.active {
+  background: var(--accent, var(--charcoal));
+  border-color: var(--accent, var(--charcoal));
+  color: #fff;
+  font-weight: 700;
+}
+@media (max-width: 1180px) {
+  .mobile-jump-nav { display: block; }
+}
+
   </style>
 </head>
 <body>
@@ -303,14 +373,18 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
       <li><a href="lillian.html">Lillian</a></li>
       <li><a href="nolan.html">Nolan</a></li>
       <li><a href="maybelle.html">Maybelle</a></li>
-    </ul>
+    
+      <li><a href="changelog.html">Changelog</a></li></ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
   </div>
 </nav>
+<div class="mobile-jump-nav"><div class="mobile-jump-nav-track"><a href="#overview">Overview</a><a href="#big-three">Big Three</a><a href="#chart-data">Chart Data</a><a href="#personality-profile">Profile</a><a href="#capricorn-a-portrait-for-parents">Sign Portrait</a><a href="#planetary-houses-nolan">Houses</a><a href="#human-design">Human Design</a><a href="#live-transits">Live Transits</a><a href="#chart-signature-nolan">Chart Signature</a></div></div>
+
 <div class="mobile-menu" id="mobile-menu">
   <a href="synastry.html">Synastry</a> <a href="dan.html">Dan</a> <a href="michelle.html">Michelle</a> <a href="lillian.html">Lillian</a> <a href="nolan.html">Nolan</a> <a href="maybelle.html">Maybelle</a>
+  <a href="changelog.html">Changelog</a>
 </div>
 
 <div class="person-hero" id="overview">
@@ -639,6 +713,40 @@ if (btn && menu) {
       renderTransits('Nolan', 'transits-container-nolan');
     }
   });
+
+(function(){
+  var mLinks = document.querySelectorAll('.mobile-jump-nav a');
+  if (!mLinks.length) return;
+  var mTargets = [];
+  mLinks.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) mTargets.push({id:id, el:el, link:a});
+  });
+  function onMobileScroll(){
+    var scrollPos = window.scrollY + window.innerHeight * 0.3;
+    var currentIndex = -1;
+    mTargets.forEach(function(t, i){
+      if (t.el.offsetTop <= scrollPos) currentIndex = i;
+    });
+    mTargets.forEach(function(t, i){
+      t.link.classList.toggle('active', i === currentIndex);
+    });
+    if (currentIndex >= 0) {
+      var activeLink = mTargets[currentIndex].link;
+      var nav = activeLink.closest('.mobile-jump-nav');
+      if (nav) {
+        var navRect = nav.getBoundingClientRect();
+        var linkRect = activeLink.getBoundingClientRect();
+        if (linkRect.left < navRect.left || linkRect.right > navRect.right) {
+          nav.scrollTo({ left: activeLink.offsetLeft - 16, behavior: 'smooth' });
+        }
+      }
+    }
+  }
+  window.addEventListener('scroll', onMobileScroll, {passive:true});
+  onMobileScroll();
+})();
 </script>
 </body>
 </html>

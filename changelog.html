@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"/>
   <link rel="apple-touch-icon" sizes="192x192" href="favicon-192.png"/>
-  <title>Michelle &amp; Maybelle · Synastry</title>
+  <title>Changelog · Spengeman Natal Charts</title>
   <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -201,15 +201,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 }
 
   :root{--accent:var(--dan);}
-  :root{--accent:#b07850;}
-  .syn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--stone);border:1px solid var(--stone);margin-bottom:3rem}
-  .syn-card{background:var(--cream);padding:2rem;}
-  .syn-card h4{font-family:var(--fd);font-size:1.4rem;font-weight:300;color:var(--ink);margin-bottom:.3rem}
-  .syn-card .meta{font-size:.75rem;color:var(--warm-gray);margin-bottom:1rem}
-  .syn-card .tag{font-size:.82rem;color:var(--mid);font-style:italic;font-family:var(--fd)}
-  .score-bar{display:flex;gap:.5rem;align-items:center;margin:1.5rem 0}
-  .score-pill{padding:.3rem .9rem;border-radius:20px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
-  @media(max-width:768px){.syn-grid{grid-template-columns:1fr}}
+  
   
 
   
@@ -351,213 +343,169 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 @media (max-width: 1180px) {
   .mobile-jump-nav { display: block; }
 }
+  :root{--accent:#DAA520;}
+  
+.changelog-entry {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--stone);
+}
+.changelog-entry:last-child { border-bottom: none; }
+.changelog-badge {
+  display: inline-block;
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .3rem .8rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.changelog-badge.feature { background: #4a6fa518; color: #4a6fa5; }
+.changelog-badge.content { background: #8b6b9e18; color: #8b6b9e; }
+.changelog-badge.fix     { background: #b56b7a18; color: #b56b7a; }
+.changelog-badge.design  { background: #4a8b7a18; color: #4a8b7a; }
+.changelog-title {
+  font-family: var(--fd);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: .6rem;
+}
+.changelog-body {
+  font-size: .92rem;
+  color: var(--mid);
+  line-height: 1.85;
+  max-width: 680px;
+}
+.changelog-body ul {
+  margin: .75rem 0 0 1.1rem;
+  padding: 0;
+}
+.changelog-body li {
+  margin-bottom: .4rem;
+}
 
   </style>
 </head>
 <body>
-<aside class="side-nav">
-    <div class="side-nav-track"><div class="side-nav-track-fill"></div></div>
-    <a href="#overview"><span class="side-nav-dot"></span><span class="side-nav-label">Overview</span></a>
-    <a href="#big-three"><span class="side-nav-dot"></span><span class="side-nav-label">Big Three</span></a>
-    <a href="#key-aspects"><span class="side-nav-dot"></span><span class="side-nav-label">Aspects</span></a>
-    </aside>
-
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">✦ Spengeman</a>
-    <ul class="nav-links" style="gap:1.2rem">
-      <li><a href="dan-michelle-synastry.html" style="">Dan &amp; Michelle</a></li>
-      <li><a href="dan-lillian-synastry.html" style="">Dan &amp; Lillian</a></li>
-      <li><a href="dan-nolan-synastry.html" style="">Dan &amp; Nolan</a></li>
-      <li><a href="dan-maybelle-synastry.html" style="">Dan &amp; Maybelle</a></li>
-      <li><a href="michelle-lillian-synastry.html" style="">Michelle &amp; Lillian</a></li>
-      <li><a href="michelle-nolan-synastry.html" style="">Michelle &amp; Nolan</a></li>
-      <li><a href="michelle-maybelle-synastry.html" style="color:var(--ink);">Michelle &amp; Maybelle</a></li>
-      
-    
-      <li><a href="changelog.html">Changelog</a></li></ul>
+    <ul class="nav-links">
+      <li><a href="index.html">Charts</a></li>
+      <li><a href="synastry.html">Synastry</a></li>
+      <li><a href="changelog.html" style="color:var(--ink)">Changelog</a></li>
+    </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
-<div class="mobile-jump-nav"><div class="mobile-jump-nav-track"><a href="#overview">Overview</a><a href="#big-three">Big Three</a><a href="#key-aspects">Aspects</a></div></div>
-
 <div class="mobile-menu" id="mobile-menu">
-  <a href="dan-michelle-synastry.html" style="">Dan &amp; Michelle</a> <a href="dan-lillian-synastry.html" style="">Dan &amp; Lillian</a> <a href="dan-nolan-synastry.html" style="">Dan &amp; Nolan</a> <a href="dan-maybelle-synastry.html" style="">Dan &amp; Maybelle</a> <a href="michelle-lillian-synastry.html" style="">Michelle &amp; Lillian</a> <a href="michelle-nolan-synastry.html" style="">Michelle &amp; Nolan</a> <a href="michelle-maybelle-synastry.html" style="color:var(--ink);">Michelle &amp; Maybelle</a>
+  <a href="index.html">Charts</a>
+  <a href="synastry.html">Synastry</a>
   <a href="changelog.html">Changelog</a>
 </div>
 
-<div class="person-hero" id="overview">
-  <a class="back-link" href="synastry.html">← All Synastry</a>
-  <p class="hero-eyebrow">Synastry Reading</p>
-  <h1 class="person-hero-name fade-up" style="font-size:clamp(2.2rem,5vw,3.8rem)">Michelle <span style="color:var(--stone)">&amp;</span> Maybelle</h1>
-  <div class="accent-bar"></div>
-  <p class="person-hero-tagline fade-up">A mother-daughter bond with warmth, creativity and a deep shared imaginative life at its center. Both have strong artistic sensibilities and an emotional world that runs richer than it appears on the surface.</p>
+<div class="person-hero">
+  <a class="back-link" href="index.html">← All Charts</a>
+  <p class="hero-eyebrow">Site History</p>
+  <h1 class="person-hero-name fade-up" style="font-size:clamp(2.8rem,6vw,4.5rem)">Changelog</h1>
+  <div class="accent-bar" style="background:#DAA520"></div>
+  <p class="person-hero-tagline fade-up">Everything added to the Spengeman natal chart site so far, most recent first.</p>
 </div>
 
-<div style="background:var(--ink);padding:2.5rem 2rem;" id="big-three">
-  <div style="max-width:var(--mw);margin:0 auto;">
-    <div class="syn-grid">
-      <div class="syn-card">
-        <h4>Michelle</h4>
-        <p class="meta">☉ Taurus · ☽ Aries · ↑ Sagittarius</p>
-        <p class="tag">"warm nurturer with a fierce inner life"</p>
-      </div>
-      <div class="syn-card">
-        <h4>Maybelle</h4>
-        <p class="meta">☉ Taurus · ☽ Gemini · ↑ Capricorn</p>
-        <p class="tag">"creative original"</p>
-      </div>
-    </div>
-    <div class="score-bar">
-      <span class="score-pill" style="background:#4a8b7a;color:#fff">4 Harmonious</span>
-      <span class="score-pill" style="background:#b56b7a;color:#fff">1 Challenging</span>
-      <span style="font-size:.78rem;color:rgba(255,255,255,.4);margin-left:.5rem">of 5 key aspects</span>
-    </div>
-  </div>
-</div>
-
-<div style="padding:4rem 2rem 6rem;max-width:var(--mw);margin:0 auto;">
-  <p class="section-label" id="key-aspects">Key Aspects</p>
+<div style="max-width:var(--mw);margin:0 auto;padding:1rem 2rem 6rem;">
   
-        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #DAA520;padding-left:1.2rem;margin-bottom:2rem;">
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
-            <span style="font-size:1.1rem;color:#DAA520">☌</span>
-            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Michelle's Moon Conjunct Maybelle's Jupiter</h3>
-            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#DAA520;margin-left:auto;white-space:nowrap">Union</span>
-          </div>
-          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Michelle's Aries Moon sits directly on Maybelle's Pisces Jupiter — this is a beautiful aspect for a mother-daughter bond. Michelle's emotional expressiveness feels expansive and freeing to Maybelle rather than overwhelming. She opens Maybelle's inner world rather than closing it.</p>
-        </div>
-        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #4a6fa5;padding-left:1.2rem;margin-bottom:2rem;">
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
-            <span style="font-size:1.1rem;color:#4a6fa5">⚹</span>
-            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Michelle's Sun Sextile Maybelle's Mars</h3>
-            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#4a6fa5;margin-left:auto;white-space:nowrap">Harmony</span>
-          </div>
-          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Michelle's Taurus steadiness harmonizes with Maybelle's Pisces creative drive — she provides the stable ground from which Maybelle's imagination can safely launch. Maybelle likely creates her most freely in Michelle's presence.</p>
-        </div>
-        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #4a6fa5;padding-left:1.2rem;margin-bottom:2rem;">
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
-            <span style="font-size:1.1rem;color:#4a6fa5">⚹</span>
-            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Maybelle's Moon Sextile Michelle's Jupiter</h3>
-            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#4a6fa5;margin-left:auto;white-space:nowrap">Harmony</span>
-          </div>
-          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Maybelle's Gemini Moon finds easy delight in Michelle's Leo Jupiter — Michelle's warmth, humor and enthusiasm for life genuinely delights Maybelle's curious emotional nature. Their conversations are likely alive with ideas and laughter.</p>
-        </div>
-        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #4a8b7a;padding-left:1.2rem;margin-bottom:2rem;">
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
-            <span style="font-size:1.1rem;color:#4a8b7a">△</span>
-            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Michelle's Sun Trine Maybelle's Saturn</h3>
-            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#4a8b7a;margin-left:auto;white-space:nowrap">Flow</span>
-          </div>
-          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Michelle's Taurus patience and reliability flows easily with Maybelle's Aquarius Saturn — she models exactly the kind of grounded consistency that Maybelle's more erratic Uranus-Sun energy needs to balance itself.</p>
-        </div>
-        <div class="syn-aspect scroll-reveal" style="border-left:3px solid #b56b7a;padding-left:1.2rem;margin-bottom:2rem;">
-          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
-            <span style="font-size:1.1rem;color:#b56b7a">□</span>
-            <h3 style="font-family:var(--fd);font-size:1.1rem;font-weight:400;color:var(--ink)">Maybelle's Sun Square Michelle's Saturn</h3>
-            <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#b56b7a;margin-left:auto;white-space:nowrap">Tension</span>
-          </div>
-          <p style="font-size:.9rem;color:var(--mid);line-height:1.8">Maybelle's Taurus-Uranus originality can occasionally bump against Michelle's Aquarius Saturn's sense of structure and limits. Michelle may sometimes feel like she needs to rein Maybelle in; Maybelle may sometimes feel constrained. The key is giving her creative freedom within a safe container.</p>
-        </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge feature">New Feature</span>
+      <h3 class="changelog-title">Live Transits</h3>
+      <div class="changelog-body"><p>Added a Live Transits section to every individual chart page. Using the Astronomy Engine library, self-hosted directly in the site, current planetary positions are calculated live in the browser every time the page loads and compared against each person's natal chart. Sun, Mars, Jupiter, Saturn, Uranus, Neptune and Pluto are tracked — fast-moving bodies like the Moon are intentionally excluded since they'd make the section stale within hours rather than meaningfully current.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge design">Design</span>
+      <h3 class="changelog-title">Mobile Navigation &amp; Responsive Pass</h3>
+      <div class="changelog-body"><p>Added a horizontal jump-navigation bar for mobile and tablet screens, mirroring the desktop side navigation, so every section is one tap away regardless of device. Alongside this, tightened padding, refined heading sizes, and wrapped data tables in scrollable containers so nothing breaks or squishes awkwardly on narrow screens.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge feature">New Feature</span>
+      <h3 class="changelog-title">Side Navigation with Scroll Progress</h3>
+      <div class="changelog-body"><ul><li>A minimal dot-based side navigation on desktop, letting you jump straight to any section on a page.</li><li>A thin fill line tracks your progress down the page, and the dot for your current section enlarges and darkens as you scroll — so at a glance you always know how far down you are.</li></ul></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge feature">New Feature</span>
+      <h3 class="changelog-title">Human Design for the Whole Family</h3>
+      <div class="changelog-body"><p>Calculated real Human Design Type, Authority, Profile and Strategy for all five family members — Generator, Projector, Manifestor, Manifesting Generator or Reflector — including population percentages and full explanations of what each placement means personally, not just generically.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge content">New Content</span>
+      <h3 class="changelog-title">Full Sign Portraits &amp; Planetary Houses</h3>
+      <div class="changelog-body"><p>Every family member now has a complete astrological portrait covering element, modality, ruling planet, core nature, strengths, shadow, and — for Dan and Michelle specifically — how their sign approaches love, work, conflict and rest. Each person's occupied houses were also written out individually, explaining what each placement means in their specific chart.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge content">New Content</span>
+      <h3 class="changelog-title">Taurus &amp; Leo Compatibility, Grouped as Its Own Section</h3>
+      <div class="changelog-body"><p>Built a full compatibility and desire section specifically for Dan and Michelle's sign pairing, written honestly rather than generically flattering. Reorganized each of their pages so all individual content is grouped together first, followed by a single unified relationship section — the compatibility essay, a four-index scorecard, named strong and weak synastry aspects, mutual influence notes, a closing diagnosis, and the composite chart — all in one place.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge feature">New Feature</span>
+      <h3 class="changelog-title">Full Family Synastry</h3>
+      <div class="changelog-body"><ul><li>Parent-child synastry for every pairing between Dan, Michelle and the three kids</li><li>Sibling synastry for Lillian &amp; Nolan, Lillian &amp; Maybelle, and Nolan &amp; Maybelle</li><li>A composite chart for Dan &amp; Michelle — the two charts mathematically blended into a symbolic third chart representing the relationship itself</li></ul></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge content">New Content</span>
+      <h3 class="changelog-title">Chart Signature: Elements, Nodes &amp; Retrogrades</h3>
+      <div class="changelog-body"><p>Added a Chart Signature section to every individual page covering elemental and modality balance (with a visual bar chart), each person's chart ruler, their Moon phase at birth, their North and South Node axis, and which planets were retrograde at the moment they were born.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge content">New Content</span>
+      <h3 class="changelog-title">Michelle's Chart Added</h3>
+      <div class="changelog-body"><p>Calculated and published Michelle's full natal chart, matching the depth already built for Dan and the kids.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge design">Design</span>
+      <h3 class="changelog-title">Favicon &amp; Branding</h3>
+      <div class="changelog-body"><p>Designed and added a custom favicon across every page and every standard size (16px through 512px), so the site carries its own identity in browser tabs and on mobile home screens.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge fix">Fix</span>
+      <h3 class="changelog-title">Mobile Rendering Bug</h3>
+      <div class="changelog-body"><p>Found and fixed a missing closing HTML tag that was silently breaking page layout on mobile browsers while looking fine on desktop — content below a certain point was rendering blank on phones. All 17 pages were audited afterward to confirm the HTML is fully balanced site-wide.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge feature">New Feature</span>
+      <h3 class="changelog-title">GitHub Pages Site Launch</h3>
+      <div class="changelog-body"><p>Converted the original PDF chart readings into a full static website — landing page, individual pages for Dan, Lillian, Nolan and Maybelle, and a synastry hub — built to be dropped directly into a GitHub repository and hosted for free on GitHub Pages.</p></div>
+    </div>
+    <div class="changelog-entry scroll-reveal">
+      <span class="changelog-badge content">New Content</span>
+      <h3 class="changelog-title">PDF Chart Readings</h3>
+      <div class="changelog-body"><p>The project began as a set of natal chart PDFs — first for Dan, then expanded to the whole family — covering the Big Three, full planetary positions, key aspects, and a written personality profile for each person, calculated from real birth data using the <code>ephem</code> astronomical library.</p></div>
+    </div>
 </div>
 
-<footer><p>Michelle &amp; Maybelle · Synastry · Spengeman Family Charts</p></footer>
+<footer><p>Spengeman Family Natal Charts · Changelog</p></footer>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
   const obs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
   },{threshold:.1});
   document.querySelectorAll('.scroll-reveal').forEach(el=>obs.observe(el));
-  
-const btn = document.getElementById('hamburger');
-const menu = document.getElementById('mobile-menu');
-if (btn && menu) {
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('open');
-    menu.classList.toggle('open');
-  });
-  // close on link tap
-  menu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      btn.classList.remove('open');
-      menu.classList.remove('open');
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
     });
-  });
-}
-
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  }
 });
-
-
-(function(){
-  var links = document.querySelectorAll('.side-nav a');
-  if (!links.length) return;
-  var targets = [];
-  links.forEach(function(a){
-    var id = a.getAttribute('href').slice(1);
-    var el = document.getElementById(id);
-    if (el) targets.push({id:id, el:el, link:a});
-  });
-  var fill = document.querySelector('.side-nav-track-fill');
-  function onScroll(){
-    var scrollPos = window.scrollY + window.innerHeight * 0.3;
-    var currentIndex = -1;
-    targets.forEach(function(t, i){
-      if (t.el.offsetTop <= scrollPos) currentIndex = i;
-    });
-    targets.forEach(function(t, i){
-      t.link.classList.remove('active', 'passed');
-      if (i === currentIndex) {
-        t.link.classList.add('active');
-      } else if (i < currentIndex) {
-        t.link.classList.add('passed');
-      }
-    });
-    if (fill && targets.length > 1) {
-      var pct = currentIndex <= 0 ? 0 : (currentIndex / (targets.length - 1)) * 100;
-      fill.style.height = pct + '%';
-    }
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('resize', onScroll, {passive:true});
-  onScroll();
-})();
-
-(function(){
-  var mLinks = document.querySelectorAll('.mobile-jump-nav a');
-  if (!mLinks.length) return;
-  var mTargets = [];
-  mLinks.forEach(function(a){
-    var id = a.getAttribute('href').slice(1);
-    var el = document.getElementById(id);
-    if (el) mTargets.push({id:id, el:el, link:a});
-  });
-  function onMobileScroll(){
-    var scrollPos = window.scrollY + window.innerHeight * 0.3;
-    var currentIndex = -1;
-    mTargets.forEach(function(t, i){
-      if (t.el.offsetTop <= scrollPos) currentIndex = i;
-    });
-    mTargets.forEach(function(t, i){
-      t.link.classList.toggle('active', i === currentIndex);
-    });
-    if (currentIndex >= 0) {
-      var activeLink = mTargets[currentIndex].link;
-      var nav = activeLink.closest('.mobile-jump-nav');
-      if (nav) {
-        var navRect = nav.getBoundingClientRect();
-        var linkRect = activeLink.getBoundingClientRect();
-        if (linkRect.left < navRect.left || linkRect.right > navRect.right) {
-          nav.scrollTo({ left: activeLink.offsetLeft - 16, behavior: 'smooth' });
-        }
-      }
-    }
-  }
-  window.addEventListener('scroll', onMobileScroll, {passive:true});
-  onMobileScroll();
-})();
 </script>
 </body>
 </html>
