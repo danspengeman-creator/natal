@@ -181,9 +181,90 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 
   :root{--accent:var(--maybelle);}
   
+  
+
+  
+/* ── Side Jump Nav (desktop only) ─────────────────────────────────────────── */
+.side-nav {
+  position: fixed;
+  right: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  align-items: flex-end;
+}
+.side-nav a {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  text-decoration: none;
+  color: var(--warm-gray);
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: .68rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: .5;
+  transition: opacity .25s ease, color .25s ease;
+}
+.side-nav a .side-nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--stone);
+  flex-shrink: 0;
+  transition: background .25s ease, transform .25s ease;
+}
+.side-nav a .side-nav-label {
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width .35s ease;
+}
+.side-nav a:hover .side-nav-label,
+.side-nav a.active .side-nav-label {
+  max-width: 220px;
+}
+.side-nav a:hover,
+.side-nav a.active {
+  opacity: 1;
+  color: var(--ink);
+}
+.side-nav a.active .side-nav-dot {
+  background: var(--accent, var(--charcoal));
+  transform: scale(1.5);
+}
+.side-nav-track {
+  position: absolute;
+  right: 2.5px;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: var(--stone);
+  z-index: -1;
+}
+@media (max-width: 1180px) {
+  .side-nav { display: none; }
+}
+
   </style>
 </head>
 <body>
+<aside class="side-nav">
+    <div class="side-nav-track"></div>
+    <a href="#overview"><span class="side-nav-dot"></span><span class="side-nav-label">Overview</span></a>
+    <a href="#big-three"><span class="side-nav-dot"></span><span class="side-nav-label">Big Three</span></a>
+    <a href="#chart-data"><span class="side-nav-dot"></span><span class="side-nav-label">Chart Data</span></a>
+    <a href="#personality-profile"><span class="side-nav-dot"></span><span class="side-nav-label">Profile</span></a>
+    <a href="#taurus-a-portrait-for-parents"><span class="side-nav-dot"></span><span class="side-nav-label">Sign Portrait</span></a>
+    <a href="#planetary-houses-maybelle"><span class="side-nav-dot"></span><span class="side-nav-label">Houses</span></a>
+    <a href="#human-design"><span class="side-nav-dot"></span><span class="side-nav-label">Human Design</span></a>
+    <a href="#chart-signature-maybelle"><span class="side-nav-dot"></span><span class="side-nav-label">Chart Signature</span></a>
+    </aside>
+
+
 
 <nav>
   <div class="nav-inner">
@@ -205,7 +286,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   <a href="synastry.html">Synastry</a> <a href="dan.html">Dan</a> <a href="michelle.html">Michelle</a> <a href="lillian.html">Lillian</a> <a href="nolan.html">Nolan</a> <a href="maybelle.html">Maybelle</a>
 </div>
 
-<div class="person-hero">
+<div class="person-hero" id="overview">
   <a class="back-link" href="index.html">← All Charts</a>
   <p class="hero-eyebrow">Natal Chart</p>
   <h1 class="person-hero-name fade-up">Maybelle<br/><span style="color:var(--warm-gray);font-size:.6em;font-weight:300;font-style:italic;">Spengeman</span></h1>
@@ -214,7 +295,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   <p class="person-hero-tagline fade-up">"The creative original — seeing the world in ways others do not, carrying within her a genuine artistic sensibility"</p>
 </div>
 
-<div class="big3-strip">
+<div class="big3-strip" id="big-three">
   <div class="big3-inner">
     <div class="big3-cell"><span class="big3-glyph">☉</span><p class="big3-placement">Sun</p><p class="big3-sign">Taurus</p><p class="big3-degree">13°</p></div>
     <div class="big3-cell"><span class="big3-glyph">☽</span><p class="big3-placement">Moon</p><p class="big3-sign">Gemini</p><p class="big3-degree">9°</p></div>
@@ -222,7 +303,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   </div>
 </div>
 
-<div class="tables-section scroll-reveal">
+<div class="tables-section scroll-reveal" id="chart-data">
   <div class="table-block">
     <h3>Planetary Positions</h3>
     <table><thead><tr><th>Planet</th><th>Sign</th><th>Degree</th><th>House</th></tr></thead>
@@ -248,7 +329,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 </div>
 
 <div class="profile-section scroll-reveal">
-  <p class="section-label">Personality Profile</p>
+  <p class="section-label" id="personality-profile">Personality Profile</p>
   <div class="profile-entries">
         <div class="profile-entry">
           <h3 class="profile-entry-heading"><span>Sun in Taurus · 4th/5th House · Conjunct Uranus</span>The Core</h3>
@@ -278,7 +359,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
     </div>
 
 <div class="profile-section scroll-reveal">
-  <p class="section-label">Taurus — A Portrait for Parents</p>
+  <p class="section-label" id="taurus-a-portrait-for-parents">Taurus — A Portrait for Parents</p>
   <div class="profile-entries">
     <div class="profile-entry">
       <h3 class="profile-entry-heading"><span>Earth · Fixed · Venus</span>Element, Modality and Ruler</h3>
@@ -312,7 +393,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 </div>
 
 <div class="profile-section scroll-reveal" style="background:var(--off-white)">
-  <p class="section-label">Planetary Houses — Maybelle</p>
+  <p class="section-label" id="planetary-houses-maybelle">Planetary Houses — Maybelle</p>
   <div>
     <div style="padding:1.5rem 0;border-bottom:1px solid var(--stone);">
       <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap;">
@@ -360,7 +441,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 </div>
 
 <div class="profile-section scroll-reveal" style="background:var(--off-white)">
-  <p class="section-label">Human Design</p>
+  <p class="section-label" id="human-design">Human Design</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--stone);border:1px solid var(--stone);margin-bottom:2.5rem;">
     <div style="background:var(--cream);padding:1.5rem;text-align:center;">
       <p style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:.4rem">Type</p>
@@ -412,7 +493,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 </div>
 
 <div class="profile-section scroll-reveal" style="background:var(--cream)">
-  <p class="section-label">Chart Signature — Maybelle</p>
+  <p class="section-label" id="chart-signature-maybelle">Chart Signature — Maybelle</p>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:3rem;">
     <div>
@@ -480,6 +561,32 @@ if (btn && menu) {
 }
 
 });
+
+
+(function(){
+  var links = document.querySelectorAll('.side-nav a');
+  if (!links.length) return;
+  var targets = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) targets.push({id:id, el:el});
+  });
+  function onScroll(){
+    var scrollPos = window.scrollY + window.innerHeight * 0.3;
+    var current = null;
+    targets.forEach(function(t){
+      if (t.el.offsetTop <= scrollPos) current = t;
+    });
+    links.forEach(function(a){ a.classList.remove('active'); });
+    if (current) {
+      var link = document.querySelector('.side-nav a[href="#' + current.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
 </script>
 </body>
 </html>

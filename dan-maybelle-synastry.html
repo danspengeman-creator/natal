@@ -188,9 +188,85 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   .score-bar{display:flex;gap:.5rem;align-items:center;margin:1.5rem 0}
   .score-pill{padding:.3rem .9rem;border-radius:20px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
   @media(max-width:768px){.syn-grid{grid-template-columns:1fr}}
+  
+
+  
+/* ── Side Jump Nav (desktop only) ─────────────────────────────────────────── */
+.side-nav {
+  position: fixed;
+  right: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  align-items: flex-end;
+}
+.side-nav a {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  text-decoration: none;
+  color: var(--warm-gray);
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: .68rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: .5;
+  transition: opacity .25s ease, color .25s ease;
+}
+.side-nav a .side-nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--stone);
+  flex-shrink: 0;
+  transition: background .25s ease, transform .25s ease;
+}
+.side-nav a .side-nav-label {
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width .35s ease;
+}
+.side-nav a:hover .side-nav-label,
+.side-nav a.active .side-nav-label {
+  max-width: 220px;
+}
+.side-nav a:hover,
+.side-nav a.active {
+  opacity: 1;
+  color: var(--ink);
+}
+.side-nav a.active .side-nav-dot {
+  background: var(--accent, var(--charcoal));
+  transform: scale(1.5);
+}
+.side-nav-track {
+  position: absolute;
+  right: 2.5px;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: var(--stone);
+  z-index: -1;
+}
+@media (max-width: 1180px) {
+  .side-nav { display: none; }
+}
+
   </style>
 </head>
 <body>
+<aside class="side-nav">
+    <div class="side-nav-track"></div>
+    <a href="#overview"><span class="side-nav-dot"></span><span class="side-nav-label">Overview</span></a>
+    <a href="#big-three"><span class="side-nav-dot"></span><span class="side-nav-label">Big Three</span></a>
+    <a href="#key-aspects"><span class="side-nav-dot"></span><span class="side-nav-label">Aspects</span></a>
+    </aside>
+
+
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">✦ Spengeman</a>
@@ -213,7 +289,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   <a href="dan-michelle-synastry.html" style="">Dan &amp; Michelle</a> <a href="dan-lillian-synastry.html" style="">Dan &amp; Lillian</a> <a href="dan-nolan-synastry.html" style="">Dan &amp; Nolan</a> <a href="dan-maybelle-synastry.html" style="color:var(--ink);">Dan &amp; Maybelle</a> <a href="michelle-lillian-synastry.html" style="">Michelle &amp; Lillian</a> <a href="michelle-nolan-synastry.html" style="">Michelle &amp; Nolan</a> <a href="michelle-maybelle-synastry.html" style="">Michelle &amp; Maybelle</a>
 </div>
 
-<div class="person-hero">
+<div class="person-hero" id="overview">
   <a class="back-link" href="synastry.html">← All Synastry</a>
   <p class="hero-eyebrow">Synastry Reading</p>
   <h1 class="person-hero-name fade-up" style="font-size:clamp(2.2rem,5vw,3.8rem)">Dan <span style="color:var(--stone)">&amp;</span> Maybelle</h1>
@@ -221,7 +297,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   <p class="person-hero-tagline fade-up">A warm and creatively alive connection — Maybelle's Sun in Taurus harmonizes beautifully with Dan's emotional world, and both share an appreciation for beauty, steadiness and depth beneath the surface.</p>
 </div>
 
-<div style="background:var(--ink);padding:2.5rem 2rem;">
+<div style="background:var(--ink);padding:2.5rem 2rem;" id="big-three">
   <div style="max-width:var(--mw);margin:0 auto;">
     <div class="syn-grid">
       <div class="syn-card">
@@ -244,7 +320,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 </div>
 
 <div style="padding:4rem 2rem 6rem;max-width:var(--mw);margin:0 auto;">
-  <p class="section-label">Key Aspects</p>
+  <p class="section-label" id="key-aspects">Key Aspects</p>
   
         <div class="syn-aspect scroll-reveal" style="border-left:3px solid #4a8b7a;padding-left:1.2rem;margin-bottom:2rem;">
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;">
@@ -313,6 +389,32 @@ if (btn && menu) {
 }
 
 });
+
+
+(function(){
+  var links = document.querySelectorAll('.side-nav a');
+  if (!links.length) return;
+  var targets = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) targets.push({id:id, el:el});
+  });
+  function onScroll(){
+    var scrollPos = window.scrollY + window.innerHeight * 0.3;
+    var current = null;
+    targets.forEach(function(t){
+      if (t.el.offsetTop <= scrollPos) current = t;
+    });
+    links.forEach(function(a){ a.classList.remove('active'); });
+    if (current) {
+      var link = document.querySelector('.side-nav a[href="#' + current.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
 </script>
 </body>
 </html>
