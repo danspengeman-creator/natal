@@ -206,42 +206,44 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 .side-nav a {
   display: flex;
   align-items: center;
-  gap: .65rem;
+  gap: .6rem;
   text-decoration: none;
-  color: var(--warm-gray);
+  color: var(--ink);
   font-family: var(--fb, 'DM Sans', sans-serif);
-  font-size: .68rem;
-  letter-spacing: .07em;
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .06em;
   text-transform: uppercase;
   white-space: nowrap;
-  opacity: .5;
-  transition: opacity .25s ease, color .25s ease;
+  opacity: .82;
+  transition: opacity .2s ease, transform .2s ease;
 }
 .side-nav a .side-nav-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--stone);
+  background: var(--accent, var(--charcoal));
   flex-shrink: 0;
-  transition: background .25s ease, transform .25s ease;
+  opacity: .55;
+  transition: opacity .2s ease, transform .2s ease;
 }
 .side-nav a .side-nav-label {
-  max-width: 0;
-  overflow: hidden;
-  transition: max-width .35s ease;
-}
-.side-nav a:hover .side-nav-label,
-.side-nav a.active .side-nav-label {
   max-width: 220px;
+  overflow: hidden;
+  color: var(--ink);
 }
 .side-nav a:hover,
 .side-nav a.active {
   opacity: 1;
-  color: var(--ink);
+  transform: translateX(-3px);
 }
+.side-nav a:hover .side-nav-dot,
 .side-nav a.active .side-nav-dot {
-  background: var(--accent, var(--charcoal));
+  opacity: 1;
   transform: scale(1.5);
+}
+.side-nav a.active {
+  font-weight: 700;
 }
 .side-nav-track {
   position: absolute;
