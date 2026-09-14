@@ -166,7 +166,7 @@ function renderTransits(personName, containerId) {
   // Active transits list
   let transitsHtml = '';
   if (activeTransits.length === 0) {
-    transitsHtml = `<p style="font-size:.9rem;color:var(--mid);line-height:1.8;">No major outer-planet transits are within a tight orb of your chart at this exact moment \u2014 check back in a week or two, as these shift gradually rather than daily.</p>`;
+    transitsHtml = `<p style="font-size:1.05rem;color:var(--mid);line-height:1.8;">No major outer-planet transits are within a tight orb of your chart at this exact moment \u2014 check back in a week or two, as these shift gradually rather than daily.</p>`;
   } else {
     activeTransits.forEach(t => {
       const color = QUALITY_COLOR[t.quality] || '#888';
@@ -177,7 +177,7 @@ function renderTransits(personName, containerId) {
             <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;font-weight:400;color:var(--ink)">Transiting ${t.transitPlanet} ${t.aspect} Natal ${t.natalPoint}</h3>
             <span style="font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:${color};margin-left:auto;white-space:nowrap">${t.quality} \u00b7 orb ${t.orb}\u00b0</span>
           </div>
-          <p style="font-size:.88rem;color:var(--mid);line-height:1.8">${t.text}</p>
+          <p style="font-size:1rem;color:var(--mid);line-height:1.8">${t.text}</p>
         </div>`;
     });
   }
