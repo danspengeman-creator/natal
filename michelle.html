@@ -932,7 +932,8 @@ if (btn && menu) {
     var scrollPos = window.scrollY + window.innerHeight * 0.3;
     var currentIndex = -1;
     targets.forEach(function(t, i){
-      if (t.el.offsetTop <= scrollPos) currentIndex = i;
+      var top = t.el.getBoundingClientRect().top + window.scrollY;
+      if (top <= scrollPos) currentIndex = i;
     });
     targets.forEach(function(t, i){
       t.link.classList.remove('active', 'passed');
@@ -975,7 +976,8 @@ if (btn && menu) {
     var scrollPos = window.scrollY + window.innerHeight * 0.3;
     var currentIndex = -1;
     mTargets.forEach(function(t, i){
-      if (t.el.offsetTop <= scrollPos) currentIndex = i;
+      var top = t.el.getBoundingClientRect().top + window.scrollY;
+      if (top <= scrollPos) currentIndex = i;
     });
     mTargets.forEach(function(t, i){
       t.link.classList.toggle('active', i === currentIndex);
