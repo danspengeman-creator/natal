@@ -217,26 +217,39 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   border-radius: 50%;
   background: var(--accent, var(--charcoal));
   flex-shrink: 0;
-  opacity: .55;
-  transition: opacity .2s ease, transform .2s ease;
+  opacity: .35;
+  transform: scale(1);
+  transition: opacity .3s ease, transform .3s ease;
 }
 .side-nav a .side-nav-label {
   max-width: 220px;
   overflow: hidden;
   color: var(--ink);
 }
-.side-nav a:hover,
-.side-nav a.active {
+.side-nav a:hover {
   opacity: 1;
   transform: translateX(-3px);
 }
-.side-nav a:hover .side-nav-dot,
-.side-nav a.active .side-nav-dot {
+.side-nav a:hover .side-nav-dot {
   opacity: 1;
   transform: scale(1.5);
 }
+.side-nav a.passed {
+  opacity: .95;
+}
+.side-nav a.passed .side-nav-dot {
+  opacity: .75;
+  transform: scale(1.15);
+}
 .side-nav a.active {
+  opacity: 1;
   font-weight: 700;
+  transform: translateX(-3px);
+}
+.side-nav a.active .side-nav-dot {
+  opacity: 1;
+  transform: scale(1.9);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, var(--charcoal)) 18%, transparent);
 }
 .side-nav-track {
   position: absolute;
@@ -246,6 +259,17 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   width: 1px;
   background: var(--stone);
   z-index: -1;
+  overflow: hidden;
+}
+.side-nav-track-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--accent, var(--charcoal));
+  opacity: .45;
+  transition: height .15s linear;
 }
 @media (max-width: 1180px) {
   .side-nav { display: none; }
@@ -255,7 +279,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
 </head>
 <body>
 <aside class="side-nav">
-    <div class="side-nav-track"></div>
+    <div class="side-nav-track"><div class="side-nav-track-fill"></div></div>
     <a href="#overview"><span class="side-nav-dot"></span><span class="side-nav-label">Overview</span></a>
     <a href="#big-three"><span class="side-nav-dot"></span><span class="side-nav-label">Big Three</span></a>
     <a href="#chart-data"><span class="side-nav-dot"></span><span class="side-nav-label">Chart Data</span></a>
@@ -572,21 +596,30 @@ if (btn && menu) {
   links.forEach(function(a){
     var id = a.getAttribute('href').slice(1);
     var el = document.getElementById(id);
-    if (el) targets.push({id:id, el:el});
+    if (el) targets.push({id:id, el:el, link:a});
   });
+  var fill = document.querySelector('.side-nav-track-fill');
   function onScroll(){
     var scrollPos = window.scrollY + window.innerHeight * 0.3;
-    var current = null;
-    targets.forEach(function(t){
-      if (t.el.offsetTop <= scrollPos) current = t;
+    var currentIndex = -1;
+    targets.forEach(function(t, i){
+      if (t.el.offsetTop <= scrollPos) currentIndex = i;
     });
-    links.forEach(function(a){ a.classList.remove('active'); });
-    if (current) {
-      var link = document.querySelector('.side-nav a[href="#' + current.id + '"]');
-      if (link) link.classList.add('active');
+    targets.forEach(function(t, i){
+      t.link.classList.remove('active', 'passed');
+      if (i === currentIndex) {
+        t.link.classList.add('active');
+      } else if (i < currentIndex) {
+        t.link.classList.add('passed');
+      }
+    });
+    if (fill && targets.length > 1) {
+      var pct = currentIndex <= 0 ? 0 : (currentIndex / (targets.length - 1)) * 100;
+      fill.style.height = pct + '%';
     }
   }
   window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
   onScroll();
 })();
 </script>
