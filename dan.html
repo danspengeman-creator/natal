@@ -287,6 +287,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
     <a href="#leo-the-full-portrait"><span class="side-nav-dot"></span><span class="side-nav-label">Sign Portrait</span></a>
     <a href="#planetary-houses-dan"><span class="side-nav-dot"></span><span class="side-nav-label">Houses</span></a>
     <a href="#human-design"><span class="side-nav-dot"></span><span class="side-nav-label">Human Design</span></a>
+    <a href="#live-transits"><span class="side-nav-dot"></span><span class="side-nav-label">Live Transits</span></a>
     <a href="#chart-signature-dan"><span class="side-nav-dot"></span><span class="side-nav-label">Chart Signature</span></a>
     <a href="#leo-and-taurus-desire-and-compatibility"><span class="side-nav-dot"></span><span class="side-nav-label">Compatibility</span></a>
     <a href="#dan-and-michelle-the-relationship"><span class="side-nav-dot"></span><span class="side-nav-label">Relationship</span></a>
@@ -531,6 +532,12 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
       <p>You likely have natural talents you are partially unaware of — gifts that others can see more clearly than you can. You need genuine solitude to develop and recharge, and your best work often emerges when you have had time alone with it.</p>
       <p style="margin-top:.75rem;font-size:.85rem;color:var(--warm-gray);font-style:italic">The 2/2 is naturally gifted but often unaware of their own talents — their genius tends to emerge in solitude and be called out by others. They need significant alone time to develop and integrate, and may resist being seen even as they attract attention.</p>
     </div>
+  </div>
+</div>
+<div class="profile-section scroll-reveal" style="background:var(--off-white)">
+  <p class="section-label" id="live-transits">Live Transits</p>
+  <div id="transits-container-dan">
+    <p style="font-size:.85rem;color:var(--warm-gray);">Calculating current sky positions…</p>
   </div>
 </div>
 <div class="profile-section scroll-reveal" style="background:var(--cream)">
@@ -859,6 +866,16 @@ if (btn && menu) {
   window.addEventListener('resize', onScroll, {passive:true});
   onScroll();
 })();
+</script>
+
+<script src="astronomy.min.js"></script>
+<script src="transits.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderTransits === 'function') {
+      renderTransits('Dan', 'transits-container-dan');
+    }
+  });
 </script>
 </body>
 </html>

@@ -287,6 +287,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
     <a href="#capricorn-a-portrait-for-parents"><span class="side-nav-dot"></span><span class="side-nav-label">Sign Portrait</span></a>
     <a href="#planetary-houses-nolan"><span class="side-nav-dot"></span><span class="side-nav-label">Houses</span></a>
     <a href="#human-design"><span class="side-nav-dot"></span><span class="side-nav-label">Human Design</span></a>
+    <a href="#live-transits"><span class="side-nav-dot"></span><span class="side-nav-label">Live Transits</span></a>
     <a href="#chart-signature-nolan"><span class="side-nav-dot"></span><span class="side-nav-label">Chart Signature</span></a>
     </aside>
 
@@ -518,6 +519,12 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
   </div>
 </div>
 
+<div class="profile-section scroll-reveal" style="background:var(--off-white)">
+  <p class="section-label" id="live-transits">Live Transits</p>
+  <div id="transits-container-nolan">
+    <p style="font-size:.85rem;color:var(--warm-gray);">Calculating current sky positions…</p>
+  </div>
+</div>
 <div class="profile-section scroll-reveal" style="background:var(--cream)">
   <p class="section-label" id="chart-signature-nolan">Chart Signature — Nolan</p>
 
@@ -622,6 +629,16 @@ if (btn && menu) {
   window.addEventListener('resize', onScroll, {passive:true});
   onScroll();
 })();
+</script>
+
+<script src="astronomy.min.js"></script>
+<script src="transits.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderTransits === 'function') {
+      renderTransits('Nolan', 'transits-container-nolan');
+    }
+  });
 </script>
 </body>
 </html>

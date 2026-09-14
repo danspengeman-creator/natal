@@ -285,6 +285,7 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
     <a href="#taurus-the-full-portrait"><span class="side-nav-dot"></span><span class="side-nav-label">Sign Portrait</span></a>
     <a href="#planetary-houses-michelle"><span class="side-nav-dot"></span><span class="side-nav-label">Houses</span></a>
     <a href="#human-design"><span class="side-nav-dot"></span><span class="side-nav-label">Human Design</span></a>
+    <a href="#live-transits"><span class="side-nav-dot"></span><span class="side-nav-label">Live Transits</span></a>
     <a href="#chart-signature-michelle"><span class="side-nav-dot"></span><span class="side-nav-label">Chart Signature</span></a>
     <a href="#taurus-and-leo-desire-and-compatibility"><span class="side-nav-dot"></span><span class="side-nav-label">Compatibility</span></a>
     <a href="#michelle-and-dan-the-relationship"><span class="side-nav-dot"></span><span class="side-nav-label">Relationship</span></a>
@@ -542,6 +543,12 @@ footer p{font-size:.75rem;color:var(--warm-gray);letter-spacing:.06em}
       <p>Others tend to project significant potential onto Michelle — seeing a problem-solver or guide before she may feel ready. Managing those projections gracefully while protecting time for solitude and self-directed development is her ongoing practice.</p>
       <p style="margin-top:.75rem;font-size:.85rem;color:var(--warm-gray);font-style:italic">The 2/5 alternates between deep solitude and being called into the world as a practical problem-solver. Others project enormous potential onto the 2/5 and the practice is managing those projections gracefully while protecting personal space.</p>
     </div>
+  </div>
+</div>
+<div class="profile-section scroll-reveal" style="background:var(--off-white)">
+  <p class="section-label" id="live-transits">Live Transits</p>
+  <div id="transits-container-michelle">
+    <p style="font-size:.85rem;color:var(--warm-gray);">Calculating current sky positions…</p>
   </div>
 </div>
 <div class="profile-section scroll-reveal" style="background:var(--cream)">
@@ -870,6 +877,16 @@ if (btn && menu) {
   window.addEventListener('resize', onScroll, {passive:true});
   onScroll();
 })();
+</script>
+
+<script src="astronomy.min.js"></script>
+<script src="transits.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderTransits === 'function') {
+      renderTransits('Michelle', 'transits-container-michelle');
+    }
+  });
 </script>
 </body>
 </html>
