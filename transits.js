@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════════════
-   Live Transits Engine — Spengeman Family Natal Site
+   Live Transits Engine; Spengeman Family Natal Site
    Uses Astronomy Engine (MIT licensed, self-hosted in astronomy.min.js)
    to calculate real-time planetary positions and compare them against
    each family member's natal chart, entirely in the browser.
@@ -21,9 +21,9 @@ function degToSign(deg) {
   return { sign: ZODIAC_SIGNS[idx], degree: Math.round(d * 10) / 10 };
 }
 
-// Transiting bodies worth tracking — outer/slow planets stay "in aspect" for
+// Transiting bodies worth tracking; outer/slow planets stay "in aspect" for
 // days to weeks, which is what makes a transit meaningful to read about.
-// Fast bodies (Moon, and usually Mercury/Venus) are excluded — they change
+// Fast bodies (Moon, and usually Mercury/Venus) are excluded; they change
 // aspect within hours, which would make the page noisy and stale within a day.
 const TRANSIT_BODIES = [
   { key: 'Sun',     orb: 1.0,  label: 'Sun' },
